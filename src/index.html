@@ -1,14 +1,302 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="data:,">
-    <title>TODO</title>
-</head>
-<body>
-    <div class="diving">
-        This is a Template!
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:," />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="nav-bar">
+      <div class="diving">Weather Forecast</div>
+
+      <div>
+        <form method="GET" id="search-form">
+          <input id="search-input" type="text" placeholder="City" required />
+          <button id="search-btn" type="submit">search</button>
+        </form>
+      </div>
     </div>
-</body>
+
+    <div id="content" class="content">
+      <div class="left-section">
+        <div>Krakow</div>
+        <div>30°C</div>
+        <div>
+          <img
+            src="../public/icons/clear-night.svg"
+            width="40"
+            height="40"
+            alt=""
+          />
+        </div>
+        <div>Monday 21:50:00</div>
+        <div>Partially cloudy</div>
+      </div>
+
+      <div class="right-section">
+        <div class="hourly-forecast">
+          <div>Hourly Forecast</div>
+          <div class="element">
+            <div class="display-weather">
+              <div>21</div>
+              <div>
+                <img
+                  src="../public/icons/clear-night.svg"
+                  width="40"
+                  height="40"
+                  alt=""
+                />
+              </div>
+              <div>12°C</div>
+            </div>
+            <div class="display-weather">
+              <div>22</div>
+              <div>
+                <img
+                  src="../public/icons/clear-night.svg"
+                  width="40"
+                  height="40"
+                  alt=""
+                />
+              </div>
+              <div>12°C</div>
+            </div>
+            <div class="display-weather">
+              <div>23</div>
+              <div>
+                <img
+                  src="../public/icons/clear-night.svg"
+                  width="40"
+                  height="40"
+                  alt=""
+                />
+              </div>
+              <div>12°C</div>
+            </div>
+            <div class="display-weather">
+              <div>00</div>
+              <div>
+                <img
+                  src="../public/icons/clear-night.svg"
+                  width="40"
+                  height="40"
+                  alt=""
+                />
+              </div>
+              <div>12°C</div>
+            </div>
+            <div class="display-weather">
+              <div>01</div>
+              <div>
+                <img
+                  src="../public/icons/clear-night.svg"
+                  width="40"
+                  height="40"
+                  alt=""
+                />
+              </div>
+              <div>12°C</div>
+            </div>
+            <div class="display-weather">
+              <div>02</div>
+              <div>
+                <img
+                  src="../public/icons/clear-night.svg"
+                  width="40"
+                  height="40"
+                  alt=""
+                />
+              </div>
+              <div>12°C</div>
+            </div>
+            <div class="display-weather">
+              <div>03</div>
+              <div>
+                <img
+                  src="../public/icons/clear-night.svg"
+                  width="40"
+                  height="40"
+                  alt=""
+                />
+              </div>
+              <div>12°C</div>
+            </div>
+            <div class="display-weather">
+              <div>04</div>
+              <div>
+                <img
+                  src="../public/icons/clear-night.svg"
+                  width="40"
+                  height="40"
+                  alt=""
+                />
+              </div>
+              <div>12°C</div>
+            </div>
+            <div class="display-weather">
+              <div>05</div>
+              <div>
+                <img
+                  src="../public/icons/clear-night.svg"
+                  width="40"
+                  height="40"
+                  alt=""
+                />
+              </div>
+              <div>12°C</div>
+            </div>
+            <div class="display-weather">
+              <div>06</div>
+              <div>
+                <img
+                  src="../public/icons/clear-night.svg"
+                  width="40"
+                  height="40"
+                  alt=""
+                />
+              </div>
+              <div>12°C</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="daily-forecast">
+          <div>10days Forecast</div>
+          <div>
+            <div>Mon</div>
+            <div>12°C</div>
+            <div>
+              <img
+                src="../public/icons/cloudy.svg"
+                width="40"
+                height="40"
+                alt=""
+              />
+            </div>
+          </div>
+          <div>
+            <div>Tue</div>
+            <div>12°C</div>
+            <div>
+              <img
+                src="../public/icons/cloudy.svg"
+                width="40"
+                height="40"
+                alt=""
+              />
+            </div>
+          </div>
+          <div>
+            <div>Wed</div>
+            <div>12°C</div>
+            <div>
+              <img
+                src="../public/icons/cloudy.svg"
+                width="40"
+                height="40"
+                alt=""
+              />
+            </div>
+          </div>
+          <div>
+            <div>Thu</div>
+            <div>12°C</div>
+            <div>
+              <img
+                src="../public/icons/cloudy.svg"
+                width="40"
+                height="40"
+                alt=""
+              />
+            </div>
+          </div>
+          <div>
+            <div>Fri</div>
+            <div>12°C</div>
+            <div>
+              <img
+                src="../public/icons/cloudy.svg"
+                width="40"
+                height="40"
+                alt=""
+              />
+            </div>
+          </div>
+          <div>
+            <div>Sat</div>
+            <div>12°C</div>
+            <div>
+              <img
+                src="../public/icons/cloudy.svg"
+                width="40"
+                height="40"
+                alt=""
+              />
+            </div>
+          </div>
+          <div>
+            <div>Sun</div>
+            <div>12°C</div>
+            <div>
+              <img
+                src="../public/icons/cloudy.svg"
+                width="40"
+                height="40"
+                alt=""
+              />
+            </div>
+          </div>
+          <div>
+            <div>Mon</div>
+            <div>12°C</div>
+            <div>
+              <img
+                src="../public/icons/cloudy.svg"
+                width="40"
+                height="40"
+                alt=""
+              />
+            </div>
+          </div>
+          <div>
+            <div>Tue</div>
+            <div>12°C</div>
+            <div>
+              <img
+                src="../public/icons/cloudy.svg"
+                width="40"
+                height="40"
+                alt=""
+              />
+            </div>
+          </div>
+          <div>
+            <div>Wed</div>
+            <div>12°C</div>
+            <div>
+              <img
+                src="../public/icons/cloudy.svg"
+                width="40"
+                height="40"
+                alt=""
+              />
+            </div>
+          </div>
+          <div>
+            <div>Thu</div>
+            <div>12°C</div>
+            <div>
+              <img
+                src="../public/icons/cloudy.svg"
+                width="40"
+                height="40"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
