@@ -1,6 +1,6 @@
 import getIcon from "./getIcons.js";
 
-const getHours = async (weatherData) => {
+const getHours = async (weatherData, isCelcieus) => {
   try {
     const hoursArray = await Promise.all(
       weatherData.hours.map(async (hour) => {
@@ -11,12 +11,14 @@ const getHours = async (weatherData) => {
         <div>
           <img
               src="${iconSrc}"
-              width="40"
-              height="40"
+              width="50"
+              height="50"
               alt="${hour.conditions || "weather icon"}"
           />
         </div>
-        <div>${hour.temp}</div>
+        <div>
+        ${isCelcieus ? parseInt((hour.temp - 32) / 1.8) + "°C" : hour.temp + "F"}
+        </div>
     </div>`;
       }),
     );

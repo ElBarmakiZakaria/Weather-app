@@ -1,7 +1,9 @@
 import getIcon from "./getIcons.js";
 import { format } from "date-fns";
 
-const getDays = async (weatherData) => {
+// (°F - 32) ÷ 1.8
+
+const getDays = async (weatherData, isCelcieus = false) => {
   try {
     const daysArray = await Promise.all(
       weatherData.days.slice(1).map(async (day) => {
@@ -12,12 +14,14 @@ const getDays = async (weatherData) => {
         <div>
           <img
               src="${iconSrc}"
-              width="40"
-              height="40"
+              width="50"
+              height="50"
               alt="${day.conditions || "weather icon"}"
           />
         </div>
-        <div>${day.temp}</div>
+        <div>
+        ${isCelcieus ? parseInt((day.temp - 32) / 1.8) + "°C" : day.temp + "F"}
+      </div>
     </div>`;
       }),
     );

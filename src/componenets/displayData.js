@@ -3,13 +3,18 @@ import { format } from "date-fns";
 import getHours from "./getHours.js";
 import getDays from "./getDays.js";
 
-async function DisplayData(weatherData) {
+async function DisplayData(weatherData, isCelcieus) {
   return `
         <div class="left-section">
+          <div class="left-top-section">
           <div class="city">${weatherData.address}</div>
+          <button id="temperature-type">${isCelcieus ? "°F" : "°C"}</button>
+          
+          </div>
+          
           <div>${weatherData.timezone}</div>
 
-          <div class="temp">${weatherData.currentConditions.temp}</div>
+          <div class="temp">${isCelcieus ? parseInt((weatherData.currentConditions.temp - 32) / 1.8) + "°C" : weatherData.currentConditions.temp + "F"}</div>
           <div>
             <img
               src="${await getIcon(weatherData.currentConditions.icon)}"
@@ -21,9 +26,9 @@ async function DisplayData(weatherData) {
           <div>${format(new Date(), "EEE, d MMMM")}</div>
           <div>${weatherData.description}</div>
 
-          <div>
+          <div class="left-top-section">
             <div class="display-weather">
-              <div>Feel like</div>
+              <div>Feels like</div>
               <div>
                 <img
                   src="${await getIcon("sleet")}"
@@ -32,7 +37,9 @@ async function DisplayData(weatherData) {
                   alt=""
                 />
               </div>
-              <div>${weatherData.currentConditions.feelslike}</div>
+              ${isCelcieus ? parseInt((weatherData.currentConditions.feelslike - 32) / 1.8) + "°C" : weatherData.currentConditions.feelslike + "F"}
+              </div>
+
             </div>
 
             <div class="display-weather">
@@ -54,14 +61,14 @@ async function DisplayData(weatherData) {
         <div class="hourly-forecast">
           <div class="header">Hourly Forecast</div>
           <div class="element">
-            ${await getHours(weatherData.days[0])}
+            ${await getHours(weatherData.days[0], isCelcieus)}
           </div>
         </div>
 
         <div class="daily-forecast">
             <div class="header">10 days Forecast</div>
             <div class="element">
-            ${await getDays(weatherData)}
+            ${await getDays(weatherData, isCelcieus)}
             </div>
         </div>
 
@@ -130,6 +137,12 @@ async function DisplayData(weatherData) {
       </div>
 
         `;
+}
+
+export function displayDataInit() {
+  const tempBtn = document.getElementById("temperature-type");
+
+  return tempBtn;
 }
 
 export default DisplayData;

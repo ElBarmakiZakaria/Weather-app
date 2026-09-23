@@ -1,8 +1,13 @@
 function Placeholder() {
   return `
-    <div class="left-section"></div>
+    <div class="left-section placeholder">
+     
+    
+    </div>
 
-    <div class="right-section"></div>
+    <div class="right-section placeholder">
+
+    </div>
     `;
 }
 
